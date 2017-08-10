@@ -21,12 +21,10 @@ function checkPermutation (string1, string2) {
   }
   for (var i = 0; i < string1.length; i++) {
     str1 += string1[i];
-    console.log(str1);
   }
   for (var j = 0; j < string2.length; j++) {
     str2 += string2[j];
   }
-  console.log(str1, str2);
   if (str1 !== str2) {
     return false;
   }
@@ -34,3 +32,18 @@ function checkPermutation (string1, string2) {
 }
 
 console.log(checkPermutation('able', 'able'));
+
+function urlIfy (str) {
+  var newStr = '';
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] === ' ') {
+      newStr += '%20';
+      i++;
+    }
+    newStr += str[i];
+  }
+
+  return newStr;
+}
+
+console.log(urlIfy('I like to race horses'));
